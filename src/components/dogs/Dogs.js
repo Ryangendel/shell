@@ -1,8 +1,8 @@
-import Shelter from "./Shelter"
+import Shelter from "../shelter/Shelter"
 
 const Dogs = (props)=>{
     console.log("----------")
-    console.log(props.name)
+    console.log(props)
     console.log("----------")
     return(
       <div>
