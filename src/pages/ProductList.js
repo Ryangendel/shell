@@ -5,11 +5,11 @@ import Footer from "../components/Footer"
 import SingleItem from "../components/SingleItem"
 
 function ProductList(props) {
-    // useEffect(()=>{
-    //     console.log("-----------XXXXXXXX")
-    //     props.setGifts([...props.productList, {product:"napkins", brand:"No idea", price: 10, id:4, quantity:99, color:"blue"}])
-    //     console.log("-----------XXXXXX")
-    // },[])
+    useEffect(()=>{
+        console.log("-----------XXXXXXXX")
+        props.setGifts([...props.productList, {product:"napkins", brand:"No idea", price: 10, id:4, quantity:99, color:"blue"}])
+        console.log("-----------XXXXXX")
+    },[])
     
     return (
         <div>

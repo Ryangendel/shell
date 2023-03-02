@@ -10,7 +10,6 @@ function ItemDetail(props) {
 
     useEffect(()=>{
         for (let i = 0; i < db.gifts.length; i++) {
-            console.log(db.gifts[i])
             if(db.gifts[i].id == params.productid){
                 setItem(db.gifts[i])
             }
@@ -21,6 +20,9 @@ function ItemDetail(props) {
         <div>
            THSI SI THE DETAILS PAGE
            <h1>{item.product}</h1>
+           <h1>{item.brand}</h1>
+           <h1>{item.price}</h1>
+           <h1>{item.id}</h1>
         </div>
     );
 };

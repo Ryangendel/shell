@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import {Link} from "react-router-dom"
 
 function ItemCard(props) {
-    console.log(props)
+    
     return (
 
         <div>

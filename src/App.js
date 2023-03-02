@@ -5,6 +5,7 @@ import './App.css';
 import ProductList from './pages/ProductList';
 import HomePage from "./pages/Home"
 import ItemDetail from "./pages/ItemDetail"
+import True from "./components/true"
 import axios from 'axios';
 import {BrowserRouter as Router, Routes, Route} from "react-router-dom"
 // import 'bootstrap/dist/css/boostrap.css';
@@ -35,11 +36,13 @@ function App() {
         <div>
           <Router>
             <Routes>
-              <Route path="/itemdetail/:productid" element={<ItemDetail/>} />
+              <Route path="/itemdetail/:productid" element={<ItemDetail />} />
               <Route path="/allitems" element={<ProductList productList={gifts} setGifts={setGifts}/>} />
               <Route path="/" element={<HomePage/>} />
             </Routes>
           </Router>
+
+          {true?<True/>:""}
         </div>
   );
 }
