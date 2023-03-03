@@ -1,5 +1,5 @@
 import logo from './logo.svg';
-import React, {useState, useEffect} from "react";
+import React, { useState, useEffect } from "react";
 import db from "./utils/giftdb"
 import './App.css';
 import ProductList from './pages/ProductList';
@@ -7,7 +7,8 @@ import HomePage from "./pages/Home"
 import ItemDetail from "./pages/ItemDetail"
 import True from "./components/true"
 import axios from 'axios';
-import {BrowserRouter as Router, Routes, Route} from "react-router-dom"
+import { RegistryProvider } from './utils/giftContext';
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
 // import 'bootstrap/dist/css/boostrap.css';
 
 function App() {
@@ -16,7 +17,7 @@ function App() {
   console.log("GIFTS BELOW======")
   console.log(gifts)
 
-  useEffect(()=>{
+  useEffect(() => {
     // fetch("https://api.chucknorris.io/jokes/random")
     //   .then(data=>data.json())
     //   .then(cleanData=>{
@@ -25,25 +26,26 @@ function App() {
     //     console.log('-----------')
     //   })
 
-      axios.get("https://api.chucknorris.io/jokes/random")
-      .then(data=>{
+    axios.get("https://api.chucknorris.io/jokes/random")
+      .then(data => {
         console.log(data)
         console.log(data.data.value)
       })
-  },[])
+  }, [])
 
   return (
-        <div>
-          <Router>
-            <Routes>
-              <Route path="/itemdetail/:productid" element={<ItemDetail />} />
-              <Route path="/allitems" element={<ProductList productList={gifts} setGifts={setGifts}/>} />
-              <Route path="/" element={<HomePage/>} />
-            </Routes>
-          </Router>
-
-          {true?<True/>:""}
-        </div>
+    <div>
+      <RegistryProvider>
+        <Router>
+          <Routes>
+            <Route path="/itemdetail/:productid" element={<ItemDetail />} />
+            <Route path="/allitems" element={<ProductList productList={gifts} setGifts={setGifts} />} />
+            <Route path="/" element={<HomePage />} />
+          </Routes>
+        </Router>
+        {true ? <True /> : ""}
+        </RegistryProvider>
+    </div>
   );
 }
 
