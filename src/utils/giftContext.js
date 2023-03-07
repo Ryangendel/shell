@@ -16,6 +16,16 @@ export function RegistryProvider(props) {
             // console.log(data.data.value)
             setJoke(data.data.value)
           })
+
+
+          axios.get("http://localhost:1337/api/items")
+          .then(data=>{
+            console.log("DATABASE INFO--------------------")
+            console.log(data)
+            console.log("DATABASE INFO--------------------")
+            // console.log(data.data.value)
+            
+          })
       },[])
     
      
