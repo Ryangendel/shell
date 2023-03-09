@@ -2,7 +2,10 @@ import React, { useState, useEffect } from "react";
 import {Link} from "react-router-dom"
 
 function ItemCard(props) {
-    
+
+    console.log("&&&&&&&&&")
+    console.log(props)
+    console.log("&&&&&&&&&")
     return (
 
         <div>
@@ -13,11 +16,11 @@ function ItemCard(props) {
             </div>
 
             <div>
-               Brand:  {props.item.brand}
+               Brand:  {props.item.attributes.brand}
             </div>
 
             <div>
-                ${props.item.price}
+                ${props.item.attributes.price}
             </div>
 
             <div>
@@ -25,11 +28,11 @@ function ItemCard(props) {
             </div>
 
             <div>
-               Color:  {props.item.color}
+               Color:  {props.item.attributes.color}
             </div>
 
             <div>
-               Quantity:  {props.item.quantity}
+               Item Name:  {props.item.attributes.item_name}
             </div>
 
             <div>

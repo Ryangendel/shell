@@ -19,7 +19,7 @@ function ItemDetail(props) {
     return (
         <div>
            THSI SI THE DETAILS PAGE
-           <h1>{item.product}</h1>
+           <h1>{item.item_name}</h1>
            <h1>{item.brand}</h1>
            <h1>{item.price}</h1>
            <h1>{item.id}</h1>
